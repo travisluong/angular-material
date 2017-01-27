@@ -1756,233 +1756,6 @@ md-bottom-sheet {
   }
 }
 
-$card-padding: 16px !default;
-$card-box-shadow: $whiteframe-shadow-1dp !default;
-
-md-card {
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  margin: $baseline-grid;
-
-  box-shadow: $card-box-shadow;
-
-  md-card-header {
-    padding: $card-padding;
-    display: flex;
-    flex-direction: row;
-
-    &:first-child {
-      md-card-avatar {
-       @include rtl-prop(margin-right, margin-left, 12px, auto);
-      }
-    }
-
-    &:last-child {
-      md-card-avatar {
-        @include rtl-prop(margin-left, margin-right, 12px, auto);
-      }
-    }
-
-    md-card-avatar {
-      width: 40px;
-      height: 40px;
-
-      .md-user-avatar,
-      md-icon{
-        border-radius: 50%;
-      }
-
-      md-icon {
-        padding: 8px;
-        > svg {
-          // Safari workaround for any SVG with padded parent
-          height: inherit;
-          width: inherit;
-        }
-      }
-
-      & + md-card-header-text {
-        max-height: 40px;
-
-        .md-title {
-          font-size: 14px;
-        }
-      }
-    }
-
-    md-card-header-text {
-      display: flex;
-      flex: 1;
-      flex-direction: column;
-
-      .md-subhead {
-        font-size: 14px;
-      }
-    }
-  }
-
-  > img,
-  > md-card-header img,
-  md-card-title-media img {
-    box-sizing: border-box;
-    display: flex;
-    flex: 0 0 auto;
-    width: 100%;
-    height: auto;
-  }
-
-  md-card-title {
-    padding: 3 * $card-padding / 2 $card-padding $card-padding;
-    display: flex;
-    flex: 1 1 auto;
-    flex-direction: row;
-
-    & + md-card-content {
-      padding-top: 0;
-    }
-
-    md-card-title-text {
-      flex: 1;
-      flex-direction: column;
-      display: flex;
-
-      .md-subhead {
-        padding-top: 0;
-        font-size: 14px;
-      }
-
-      &:only-child {
-        .md-subhead {
-          padding-top: 3 * $card-padding / 4;
-        }
-      }
-    }
-
-    md-card-title-media {
-      margin-top: - $card-padding / 2;
-
-      .md-media-sm {
-        height: 80px;
-        width: 80px;
-      }
-      .md-media-md {
-        height: 112px;
-        width: 112px;
-      }
-      .md-media-lg {
-        height: 152px;
-        width: 152px;
-      }
-    }
-  }
-
-  md-card-content {
-    display: block;
-    padding: $card-padding;
-
-    & > p {
-      &:first-child {
-        margin-top: 0;
-      }
-
-      &:last-child {
-        margin-bottom: 0;
-      }
-    }
-
-    .md-media-xl {
-      height: 240px;
-      width: 240px;
-    }
-  }
-
-  .md-actions, md-card-actions {
-    margin: $baseline-grid;
-
-    &.layout-column {
-      .md-button {
-        &:not(.md-icon-button) {
-          margin: $baseline-grid / 4 0;
-
-          &:first-of-type {
-            margin-top: 0;
-          }
-
-          &:last-of-type {
-            margin-bottom: 0;
-          }
-        }
-
-        &.md-icon-button {
-          margin-top: 3 * $baseline-grid / 4;
-          margin-bottom: 3 * $baseline-grid / 4;
-        }
-      }
-    }
-
-    md-card-icon-actions {
-      flex: 1;
-      justify-content: flex-start;
-      display: flex;
-      flex-direction: row;
-    }
-
-    &:not(.layout-column) .md-button {
-      &:not(.md-icon-button) {
-        margin: 0 $baseline-grid * .5;
-
-        &:first-of-type {
-          @include rtl-prop(margin-left, margin-right, 0, auto);
-        }
-
-        &:last-of-type {
-          @include rtl-prop(margin-right, margin-left, 0, auto);
-        }
-      }
-
-      &.md-icon-button {
-        margin-left: 3 * $baseline-grid / 4;
-        margin-right: 3 * $baseline-grid / 4;
-
-        &:first-of-type {
-          @include rtl-prop(margin-left, margin-right, 3 * $baseline-grid / 2, auto);
-        }
-
-        &:last-of-type {
-          @include rtl-prop(margin-right, margin-left, 3 * $baseline-grid / 2, auto);
-        }
-      }
-
-      & + md-card-icon-actions {
-        flex: 1;
-        justify-content: flex-end;
-        display: flex;
-        flex-direction: row;
-      }
-    }
-  }
-
-  md-card-footer {
-    margin-top: auto;
-    padding: $card-padding;
-  }
-}
-
-@media screen and (-ms-high-contrast: active) {
-  md-card {
-    border: 1px solid #fff;
-  }
-}
-
-.md-image-no-fill {
-  > img {
-    width: auto;
-    height: auto;
-  }
-}
-
-
 // Material Design Button
 // https://material.google.com/components/buttons.html
 
@@ -2245,6 +2018,233 @@ button.md-button.md-fab {
   }
 }
 
+$card-padding: 16px !default;
+$card-box-shadow: $whiteframe-shadow-1dp !default;
+
+md-card {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  margin: $baseline-grid;
+
+  box-shadow: $card-box-shadow;
+
+  md-card-header {
+    padding: $card-padding;
+    display: flex;
+    flex-direction: row;
+
+    &:first-child {
+      md-card-avatar {
+       @include rtl-prop(margin-right, margin-left, 12px, auto);
+      }
+    }
+
+    &:last-child {
+      md-card-avatar {
+        @include rtl-prop(margin-left, margin-right, 12px, auto);
+      }
+    }
+
+    md-card-avatar {
+      width: 40px;
+      height: 40px;
+
+      .md-user-avatar,
+      md-icon{
+        border-radius: 50%;
+      }
+
+      md-icon {
+        padding: 8px;
+        > svg {
+          // Safari workaround for any SVG with padded parent
+          height: inherit;
+          width: inherit;
+        }
+      }
+
+      & + md-card-header-text {
+        max-height: 40px;
+
+        .md-title {
+          font-size: 14px;
+        }
+      }
+    }
+
+    md-card-header-text {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+
+      .md-subhead {
+        font-size: 14px;
+      }
+    }
+  }
+
+  > img,
+  > md-card-header img,
+  md-card-title-media img {
+    box-sizing: border-box;
+    display: flex;
+    flex: 0 0 auto;
+    width: 100%;
+    height: auto;
+  }
+
+  md-card-title {
+    padding: 3 * $card-padding / 2 $card-padding $card-padding;
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: row;
+
+    & + md-card-content {
+      padding-top: 0;
+    }
+
+    md-card-title-text {
+      flex: 1;
+      flex-direction: column;
+      display: flex;
+
+      .md-subhead {
+        padding-top: 0;
+        font-size: 14px;
+      }
+
+      &:only-child {
+        .md-subhead {
+          padding-top: 3 * $card-padding / 4;
+        }
+      }
+    }
+
+    md-card-title-media {
+      margin-top: - $card-padding / 2;
+
+      .md-media-sm {
+        height: 80px;
+        width: 80px;
+      }
+      .md-media-md {
+        height: 112px;
+        width: 112px;
+      }
+      .md-media-lg {
+        height: 152px;
+        width: 152px;
+      }
+    }
+  }
+
+  md-card-content {
+    display: block;
+    padding: $card-padding;
+
+    & > p {
+      &:first-child {
+        margin-top: 0;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    .md-media-xl {
+      height: 240px;
+      width: 240px;
+    }
+  }
+
+  .md-actions, md-card-actions {
+    margin: $baseline-grid;
+
+    &.layout-column {
+      .md-button {
+        &:not(.md-icon-button) {
+          margin: $baseline-grid / 4 0;
+
+          &:first-of-type {
+            margin-top: 0;
+          }
+
+          &:last-of-type {
+            margin-bottom: 0;
+          }
+        }
+
+        &.md-icon-button {
+          margin-top: 3 * $baseline-grid / 4;
+          margin-bottom: 3 * $baseline-grid / 4;
+        }
+      }
+    }
+
+    md-card-icon-actions {
+      flex: 1;
+      justify-content: flex-start;
+      display: flex;
+      flex-direction: row;
+    }
+
+    &:not(.layout-column) .md-button {
+      &:not(.md-icon-button) {
+        margin: 0 $baseline-grid * .5;
+
+        &:first-of-type {
+          @include rtl-prop(margin-left, margin-right, 0, auto);
+        }
+
+        &:last-of-type {
+          @include rtl-prop(margin-right, margin-left, 0, auto);
+        }
+      }
+
+      &.md-icon-button {
+        margin-left: 3 * $baseline-grid / 4;
+        margin-right: 3 * $baseline-grid / 4;
+
+        &:first-of-type {
+          @include rtl-prop(margin-left, margin-right, 3 * $baseline-grid / 2, auto);
+        }
+
+        &:last-of-type {
+          @include rtl-prop(margin-right, margin-left, 3 * $baseline-grid / 2, auto);
+        }
+      }
+
+      & + md-card-icon-actions {
+        flex: 1;
+        justify-content: flex-end;
+        display: flex;
+        flex-direction: row;
+      }
+    }
+  }
+
+  md-card-footer {
+    margin-top: auto;
+    padding: $card-padding;
+  }
+}
+
+@media screen and (-ms-high-contrast: active) {
+  md-card {
+    border: 1px solid #fff;
+  }
+}
+
+.md-image-no-fill {
+  > img {
+    width: auto;
+    height: auto;
+  }
+}
+
+
 //$checkbox-width: 20px !default;
 //$checkbox-height: $checkbox-width !default;
 //$checkbox-border-radius: 2px !default;
@@ -2315,6 +2315,31 @@ md-checkbox {
 
   }
 }
+
+md-content {
+
+  display: block;
+  position: relative;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+
+  &[md-scroll-y] {
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+  &[md-scroll-x] {
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+  &[md-scroll-xy] {
+  }
+
+  @media print {
+    overflow: visible !important;
+  }
+}
+
+
 
 $chip-font-size: rem(1.6) !default;
 $chip-height: rem(3.2) !default;
@@ -2527,30 +2552,129 @@ $contact-chip-name-width: rem(12) !default;
 }
 
 
-md-content {
+$dialog-padding: $baseline-grid * 3 !default;
 
-  display: block;
+.md-dialog-is-showing {
+  max-height: 100%;
+}
+
+.md-dialog-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: $z-index-dialog;
+  overflow: hidden;
+}
+
+md-dialog {
+
+  &.md-transition-in {
+    opacity: 1;
+    transition: $swift-ease-out;
+    transform: translate(0,0) scale(1.0);
+  }
+  &.md-transition-out {
+    opacity: 0;
+    transition: $swift-ease-out;
+    transform: translate(0,100%) scale(0.2);
+  }
+
+  opacity: 0;
+  min-width: 240px;
+  max-width: 80%;
+  max-height: 80%;
   position: relative;
-  overflow: auto;
-  -webkit-overflow-scrolling: touch;
+  overflow: auto; // stop content from leaking out of dialog parent and fix IE
 
-  &[md-scroll-y] {
-    overflow-y: auto;
-    overflow-x: hidden;
-  }
-  &[md-scroll-x] {
-    overflow-x: auto;
-    overflow-y: hidden;
-  }
-  &[md-scroll-xy] {
+  box-shadow: $whiteframe-shadow-13dp;
+
+  display: flex;
+  flex-direction: column;
+
+  &> form {
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
   }
 
-  @media print {
-    overflow: visible !important;
+  .md-dialog-content {
+    padding: $dialog-padding;
+  }
+
+  md-dialog-content {
+    order: 1;
+    flex-direction: column;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+
+    &:not([layout=row]) > *:first-child:not(.md-subheader) {
+      margin-top: 0;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    .md-subheader {
+      margin: 0;
+    }
+
+    .md-dialog-content-body {
+      width:100%;
+    }
+
+    .md-prompt-input-container {
+      width: 100%;
+      box-sizing: border-box;
+    }
+  }
+
+  md-dialog-actions {
+    display: flex;
+    order: 2;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 0;
+    @include rtl(padding-right, $baseline-grid, $baseline-grid * 2);
+    @include rtl(padding-left, $baseline-grid * 2, $baseline-grid);
+    min-height: $baseline-grid * 6.5;
+    overflow: hidden;
+
+    .md-button {
+      margin-bottom: $baseline-grid;
+      @include rtl(margin-left, $baseline-grid, 0);
+      @include rtl(margin-right, 0, $baseline-grid);
+      margin-top: $baseline-grid;
+    }
+  }
+  &.md-content-overflow {
+    md-dialog-actions {
+      border-top-width: 1px;
+      border-top-style: solid;
+    }
+  }
+
+}
+
+@media screen and (-ms-high-contrast: active) {
+  md-dialog {
+    border: 1px solid #fff;
   }
 }
 
-
+@media (max-width: $layout-breakpoint-sm - 1) {
+  md-dialog.md-dialog-fullscreen {
+    min-height: 100%;
+    min-width: 100%;
+    border-radius: 0;
+  }
+}
 
 /** Styles for mdCalendar. */
 $md-calendar-cell-size: 44px !default;
@@ -3011,130 +3135,6 @@ md-divider {
     border-top-width: 0;
     border-right-width: 1px;
     border-right-style: solid;
-  }
-}
-
-$dialog-padding: $baseline-grid * 3 !default;
-
-.md-dialog-is-showing {
-  max-height: 100%;
-}
-
-.md-dialog-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: $z-index-dialog;
-  overflow: hidden;
-}
-
-md-dialog {
-
-  &.md-transition-in {
-    opacity: 1;
-    transition: $swift-ease-out;
-    transform: translate(0,0) scale(1.0);
-  }
-  &.md-transition-out {
-    opacity: 0;
-    transition: $swift-ease-out;
-    transform: translate(0,100%) scale(0.2);
-  }
-
-  opacity: 0;
-  min-width: 240px;
-  max-width: 80%;
-  max-height: 80%;
-  position: relative;
-  overflow: auto; // stop content from leaking out of dialog parent and fix IE
-
-  box-shadow: $whiteframe-shadow-13dp;
-
-  display: flex;
-  flex-direction: column;
-
-  &> form {
-    display: flex;
-    flex-direction: column;
-    overflow: auto;
-  }
-
-  .md-dialog-content {
-    padding: $dialog-padding;
-  }
-
-  md-dialog-content {
-    order: 1;
-    flex-direction: column;
-    overflow: auto;
-    -webkit-overflow-scrolling: touch;
-
-    &:not([layout=row]) > *:first-child:not(.md-subheader) {
-      margin-top: 0;
-    }
-
-    &:focus {
-      outline: none;
-    }
-
-    .md-subheader {
-      margin: 0;
-    }
-
-    .md-dialog-content-body {
-      width:100%;
-    }
-
-    .md-prompt-input-container {
-      width: 100%;
-      box-sizing: border-box;
-    }
-  }
-
-  md-dialog-actions {
-    display: flex;
-    order: 2;
-    box-sizing: border-box;
-    align-items: center;
-    justify-content: flex-end;
-    margin-bottom: 0;
-    @include rtl(padding-right, $baseline-grid, $baseline-grid * 2);
-    @include rtl(padding-left, $baseline-grid * 2, $baseline-grid);
-    min-height: $baseline-grid * 6.5;
-    overflow: hidden;
-
-    .md-button {
-      margin-bottom: $baseline-grid;
-      @include rtl(margin-left, $baseline-grid, 0);
-      @include rtl(margin-right, 0, $baseline-grid);
-      margin-top: $baseline-grid;
-    }
-  }
-  &.md-content-overflow {
-    md-dialog-actions {
-      border-top-width: 1px;
-      border-top-style: solid;
-    }
-  }
-
-}
-
-@media screen and (-ms-high-contrast: active) {
-  md-dialog {
-    border: 1px solid #fff;
-  }
-}
-
-@media (max-width: $layout-breakpoint-sm - 1) {
-  md-dialog.md-dialog-fullscreen {
-    min-height: 100%;
-    min-width: 100%;
-    border-radius: 0;
   }
 }
 
@@ -6864,74 +6864,6 @@ md-toast {
   overflow: hidden !important;
 }
 
-$tooltip-fontsize-lg: 10px !default;
-$tooltip-fontsize-sm: 14px !default;
-$tooltip-height-lg: 22px !default;
-$tooltip-height-sm: 32px !default;
-$tooltip-top-margin-lg: 14px !default;
-$tooltip-top-margin-sm: 24px !default;
-$tooltip-lr-padding-lg: 8px !default;
-$tooltip-lr-padding-sm: 16px !default;
-$tooltip-max-width: 32px !default;
-
-.md-tooltip {
-  pointer-events: none;
-  border-radius: 4px;
-  overflow: hidden;
-  opacity: 0;
-  font-weight: 500;
-  font-size: $tooltip-fontsize-sm;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  height: $tooltip-height-sm;
-  line-height: $tooltip-height-sm;
-  padding-right: $tooltip-lr-padding-sm;
-  padding-left: $tooltip-lr-padding-sm;
-  &.md-origin-top {
-    transform-origin: center bottom;
-    margin-top: -$tooltip-top-margin-sm;
-  }
-  &.md-origin-right {
-    transform-origin: left center;
-    margin-left: $tooltip-top-margin-sm;
-  }
-  &.md-origin-bottom {
-    transform-origin: center top;
-    margin-top: $tooltip-top-margin-sm;
-  }
-  &.md-origin-left {
-    transform-origin: right center;
-    margin-left: -$tooltip-top-margin-sm;
-  }
-
-  @media (min-width: $layout-breakpoint-sm) {
-    font-size: $tooltip-fontsize-lg;
-    height: $tooltip-height-lg;
-    line-height: $tooltip-height-lg;
-    padding-right: $tooltip-lr-padding-lg;
-    padding-left: $tooltip-lr-padding-lg;
-    &.md-origin-top { margin-top: -$tooltip-top-margin-lg; }
-    &.md-origin-right { margin-left: $tooltip-top-margin-lg; }
-    &.md-origin-bottom { margin-top: $tooltip-top-margin-lg; }
-    &.md-origin-left { margin-left: -$tooltip-top-margin-lg; }
-  }
-
-  &.md-show-add {
-    transform: scale(0);
-  }
-  &.md-show {
-    transition: $swift-ease-out;
-    transform: scale(1);
-    opacity: 0.9;
-  }
-  &.md-hide {
-    transition: $swift-ease-in;
-    transition-duration: .1s;
-    transform: scale(0);
-    opacity: 0;
-  }
-}
-
 // Standard/Desktop Heights
 $md-toolbar-height: $baseline-grid * 8 !default;
 $md-toolbar-medium-tall-height: 88px !default;
@@ -7112,6 +7044,74 @@ md-toolbar {
   }
 }
 
+
+$tooltip-fontsize-lg: 10px !default;
+$tooltip-fontsize-sm: 14px !default;
+$tooltip-height-lg: 22px !default;
+$tooltip-height-sm: 32px !default;
+$tooltip-top-margin-lg: 14px !default;
+$tooltip-top-margin-sm: 24px !default;
+$tooltip-lr-padding-lg: 8px !default;
+$tooltip-lr-padding-sm: 16px !default;
+$tooltip-max-width: 32px !default;
+
+.md-tooltip {
+  pointer-events: none;
+  border-radius: 4px;
+  overflow: hidden;
+  opacity: 0;
+  font-weight: 500;
+  font-size: $tooltip-fontsize-sm;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  height: $tooltip-height-sm;
+  line-height: $tooltip-height-sm;
+  padding-right: $tooltip-lr-padding-sm;
+  padding-left: $tooltip-lr-padding-sm;
+  &.md-origin-top {
+    transform-origin: center bottom;
+    margin-top: -$tooltip-top-margin-sm;
+  }
+  &.md-origin-right {
+    transform-origin: left center;
+    margin-left: $tooltip-top-margin-sm;
+  }
+  &.md-origin-bottom {
+    transform-origin: center top;
+    margin-top: $tooltip-top-margin-sm;
+  }
+  &.md-origin-left {
+    transform-origin: right center;
+    margin-left: -$tooltip-top-margin-sm;
+  }
+
+  @media (min-width: $layout-breakpoint-sm) {
+    font-size: $tooltip-fontsize-lg;
+    height: $tooltip-height-lg;
+    line-height: $tooltip-height-lg;
+    padding-right: $tooltip-lr-padding-lg;
+    padding-left: $tooltip-lr-padding-lg;
+    &.md-origin-top { margin-top: -$tooltip-top-margin-lg; }
+    &.md-origin-right { margin-left: $tooltip-top-margin-lg; }
+    &.md-origin-bottom { margin-top: $tooltip-top-margin-lg; }
+    &.md-origin-left { margin-left: -$tooltip-top-margin-lg; }
+  }
+
+  &.md-show-add {
+    transform: scale(0);
+  }
+  &.md-show {
+    transition: $swift-ease-out;
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  &.md-hide {
+    transition: $swift-ease-in;
+    transition-duration: .1s;
+    transform: scale(0);
+    opacity: 0;
+  }
+}
 
 .md-truncate {
   overflow: hidden;
